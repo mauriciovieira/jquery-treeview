@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+	// collapse subtrees example
+	$("#browsercst").treeview({
+		collapsesub: true,
+	});
+
 	// first example
 	$("#browser").treeview();
 

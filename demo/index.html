@@ -31,6 +31,44 @@
 		<li><a href="simple.html">Simple Tree Demo, famfamfam theme (no lines)</a></li>
 	</ul>
 
+	<h4>Sample 0 - collapse subtree</h4>
+	<ul id="browsercst" class="filetree">
+		<li><span class="folder">Folder 1</span>
+			<ul>
+				<li><span class="file">Item 1.1</span></li>
+			</ul>
+		</li>
+		<li><span class="folder">Folder 2</span>
+			<ul>
+				<li><span class="folder">Subfolder 2.1</span>
+					<ul id="folder21">
+						<li><span class="file">File 2.1.1</span></li>
+						<li><span class="file">File 2.1.2</span></li>
+					</ul>
+				</li>
+				<li><span class="file">File 2.2</span></li>
+				<li><span class="folder">Subfolder 2.3</span>
+					<ul id="folder23">
+						<li><span class="file">File 2.3.1</span></li>
+						<li><span class="file">File 2.3.2</span></li>
+						<li><span class="folder">Subfolder 2.3.3</span>
+						<ul id="folder233">
+							<li><span class="file">File 2.3.3.1</span></li>
+							<li><span class="file">File 2.3.3.2</span></li>
+							<li><span class="file">File 2.3.3.3</span></li>
+						</ul>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li class="closed"><span class="folder">Folder 3 (closed at start)</span>
+			<ul>
+				<li><span class="file">File 3.1</span></li>
+			</ul>
+		</li>
+		<li><span class="file">File 4</span></li>
+	</ul>
+
 	<h4>Sample 1 - default</h4>
 	<ul id="browser" class="filetree">
 		<li><span class="folder">Folder 1</span>
