@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 	// collapse subtrees example
 	$("#browsercst").treeview({
-		collapsesub: true,
+		collapsesubtree: true,
 	});
 
 	// first example
