@@ -149,7 +149,6 @@
 					.find( ">ul" )
 					// toggle them
 					.heightToggle( settings.animated, settings.toggle );
-				  console.log("Toogle normal. Nao sei se abriu ou fechou");
 				if ( settings.unique ) {
 					$(this).parent()
 						.siblings()
@@ -163,23 +162,16 @@
 						.find( ">ul" )
 						.heightHide( settings.animated, settings.toggle );
 				}
-				if ( settings.collapsesubtree && $(this).parent().find(">.hitarea").hasClass( CLASSES.expandableHitarea )) {
-					console.log("Fechando");
-					$(this).parent()
-						.children()
-						.find(">.hitarea")
-//							.replaceClass( CLASSES.collapsableHitarea, CLASSES.expandableHitarea )
-//							.replaceClass( CLASSES.lastCollapsableHitarea, CLASSES.lastExpandableHitarea )
-							.replaceClass( CLASSES.expandableHitarea, CLASSES.collapsableHitarea )
-							.replaceClass( CLASSES.lastExpandableHitarea, CLASSES.lastCollapsableHitarea )
+				if (settings.collapsesubtree && $(this).parent().hasClass(CLASSES.expandable) ) {
+					$(this).parent().find('>ul')
+						.find('*')
+							.replaceClass( CLASSES.collapsableHitarea, CLASSES.expandableHitarea )
+							.replaceClass( CLASSES.lastCollapsableHitarea, CLASSES.lastExpandableHitarea )
+							.replaceClass( CLASSES.collapsable, CLASSES.expandable )
+							.replaceClass( CLASSES.lastCollapsable, CLASSES.lastExpandable )
 						.end()
-//						.replaceClass( CLASSES.collapsable, CLASSES.expandable )
-//						.replaceClass( CLASSES.lastCollapsable, CLASSES.lastExpandable )
-						.replaceClass( CLASSES.expandable, CLASSES.collapsable )
-						.replaceClass( CLASSES.lastExpandable, CLASSES.lastCollapsable )
-//						.find( ">ul" )
-//						.heightHide( settings.animated, settings.toggle )
-						;
+						.find('ul')
+						.heightHide( settings.animated, settings.toggle );	
 				}
 			}
 			this.data("toggler", toggler);
